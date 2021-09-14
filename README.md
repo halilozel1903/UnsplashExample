@@ -2,9 +2,9 @@
 
 ![Screenshot](https://codersera.com/blog/wp-content/uploads/2021/03/learn-android-programming.png)
 
-Unsplash Clone application; Dagger Hilt, Coroutines, Lifecycle, LiveData, ViewModel, Retrofit, Coil based on **MVVM** Architecture.
+Unsplash Clone application; **Dagger Hilt**, **Coroutines**, **Lifecycle**, **LiveData**, **ViewModel**, **Retrofit**, **Coil** based on **MVVM** Architecture.
 
-Photos taken from api are shown in the app. Image API : https://unsplash.com/developers 
+Photos taken from api are shown in the app. Image API: https://unsplash.com/developers 
 
 ## Architecture 🏛
 
