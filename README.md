@@ -1,4 +1,4 @@
-### Unsplash Image API 🖼
+### Unsplash 👀 Image API 🖼
 
 ![Screenshot](https://codersera.com/blog/wp-content/uploads/2021/03/learn-android-programming.png)
 
@@ -8,12 +8,12 @@ Photos taken from api are shown in the app. Image API: https://unsplash.com/deve
 
 ## Architecture 🏛
 
-Model - View - ViewModel (MVVM) is the industry recognized software architecture pattern that overcomes all drawbacks of MVP and MVC design patterns. MVVM suggests separating the data presentation logic(Views or UI) from the core business logic part of the application
+**Model - View - ViewModel (MVVM)** is the industry recognized software architecture pattern that overcomes all drawbacks of MVP and MVC design patterns. MVVM suggests separating the data presentation logic(Views or UI) from the core business logic part of the application
 
 ![Screenshot](https://androidwave.com/wp-content/uploads/2019/05/mvvm-architecture-app-in-android.png)
 
 
-## Library 🛠
+## Libraries 🛠
 ![Screenshot](https://anteelo.com/wp-content/uploads/2021/05/Android-libraries.jpg)
 - [Kotlin](https://github.com/JetBrains/kotlin) -> The Kotlin Programming Language.
 - [Retrofit](https://github.com/square/retrofit) -> A type-safe HTTP client for Android and the JVM.
