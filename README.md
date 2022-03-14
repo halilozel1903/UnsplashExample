@@ -13,7 +13,7 @@ Photos taken from api are shown in the app. Image API: https://unsplash.com/deve
 ![Screenshot](https://androidwave.com/wp-content/uploads/2019/05/mvvm-architecture-app-in-android.png)
 
 
-## Libraries 🛠
+## Libraries 🛠 ⚙️
 ![Screenshot](https://anteelo.com/wp-content/uploads/2021/05/Android-libraries.jpg)
 - [Kotlin](https://github.com/JetBrains/kotlin) -> The Kotlin Programming Language.
 - [Retrofit](https://github.com/square/retrofit) -> A type-safe HTTP client for Android and the JVM.
@@ -25,7 +25,7 @@ Photos taken from api are shown in the app. Image API: https://unsplash.com/deve
 - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) -> ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.
 - [Coil](https://github.com/coil-kt/coil) -> Image loading for Android backed by Kotlin Coroutines.
 
-## Android Application Screens 📱
+## Android 📱 Application Screens 📸
 
 <img src="https://github.com/halilozel1903/UnsplashExample/blob/master/screenshots/screen1.png" width="250" /> <img src="https://github.com/halilozel1903/UnsplashExample/blob/master/screenshots/screen2.png" width="250" />  <img src="https://github.com/halilozel1903/UnsplashExample/blob/master/screenshots/screen3.png" width="250" />
 
@@ -33,7 +33,7 @@ Photos taken from api are shown in the app. Image API: https://unsplash.com/deve
 ```
 MIT License
 
-Copyright (c) 2021 Halil OZEL
+Copyright (c) 2022 Halil OZEL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
