@@ -9,7 +9,6 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 
 interface ImageService {
-
     @Headers("Accept-Version: $VERSION", "Authorization: Client-ID $CLIENT_ID")
     @GET(END_POINT)
     suspend fun getAllImages(): Response<List<ImageItem>>
