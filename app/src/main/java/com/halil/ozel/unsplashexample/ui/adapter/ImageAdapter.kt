@@ -10,7 +10,6 @@ import com.halil.ozel.unsplashexample.databinding.ImageItemBinding
 import com.halil.ozel.unsplashexample.model.ImageItem
 
 class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-
     inner class ImageViewHolder(val binding: ImageItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
