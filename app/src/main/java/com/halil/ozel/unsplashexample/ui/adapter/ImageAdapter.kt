@@ -21,7 +21,6 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
         override fun areContentsTheSame(oldItem: ImageItem, newItem: ImageItem): Boolean {
             return oldItem == newItem
         }
-
     }
 
     private val differ = AsyncListDiffer(this, diffCallback)

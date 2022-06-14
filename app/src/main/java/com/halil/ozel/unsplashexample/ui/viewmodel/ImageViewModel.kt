@@ -27,6 +27,5 @@ class ImageViewModel @Inject constructor(private val repository: ImageRepository
                 println("Error ${response.errorBody()}")
             }
         }
-
     }
 }
