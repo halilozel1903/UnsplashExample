@@ -5,4 +5,6 @@ object Constants {
     const val END_POINT = "/photos"
     const val BASE_URL = "https://api.unsplash.com"
     const val VERSION = "v1"
+    const val ACCEPT_VERSION = "Accept-Version"
+    const val AUTHORIZATION = "Authorization: Client-ID"
 }

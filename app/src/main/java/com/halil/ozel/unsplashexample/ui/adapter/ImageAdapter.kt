@@ -44,10 +44,14 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
             val imageLink = currImage.urls.full
             imageView.load(imageLink) {
                 crossfade(true)
-                crossfade(1000)
+                crossfade(DURATION_MILLIS)
             }
         }
     }
 
     override fun getItemCount() = differ.currentList.size
+
+    companion object {
+        const val DURATION_MILLIS = 1000
+    }
 }
