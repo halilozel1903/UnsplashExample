@@ -17,9 +17,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setView()
+        setupImageData()
+    }
+
+    private fun setView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupImageData()
     }
 
     private fun setupImageData() {
