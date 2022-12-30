@@ -10,6 +10,7 @@ import com.halil.ozel.unsplashexample.databinding.ImageItemBinding
 import com.halil.ozel.unsplashexample.model.ImageItem
 
 class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+
     inner class ImageViewHolder(val binding: ImageItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -52,6 +53,6 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
     override fun getItemCount() = differ.currentList.size
 
     companion object {
-        const val DURATION_MILLIS = 1000
+        private const val DURATION_MILLIS = 1000
     }
 }
