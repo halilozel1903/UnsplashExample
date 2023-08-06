@@ -6,8 +6,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
     defaultConfig {
+        compileSdk 33
         applicationId "com.halil.ozel.unsplashexample"
         minSdkVersion 24
         targetSdkVersion 33
