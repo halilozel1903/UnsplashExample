@@ -12,31 +12,28 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var imageAdapter: ImageAdapter
+    private val imageAdapter = ImageAdapter()
     private val viewModel: ImageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setView()
-        setupImageData()
+        setupView()
+        observeImages()
     }
 
-    private fun setView() {
+    private fun setupView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    }
-
-    private fun setupImageData() {
-        imageAdapter = ImageAdapter()
         binding.recyclerView.apply {
             adapter = imageAdapter
             layoutManager = LinearLayoutManager(this@MainActivity)
             setHasFixedSize(true)
         }
+    }
+
+    private fun observeImages() {
         viewModel.responseImages.observe(this) { response ->
-            if (response != null) {
-                imageAdapter.submitList(response)
-            }
+            response?.let { imageAdapter.submitList(it) }
         }
     }
 }

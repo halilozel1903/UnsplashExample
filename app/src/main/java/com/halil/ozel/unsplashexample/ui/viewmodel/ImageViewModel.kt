@@ -1,5 +1,6 @@
 package com.halil.ozel.unsplashexample.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,19 +14,26 @@ import javax.inject.Inject
 @HiltViewModel
 class ImageViewModel @Inject constructor(private val repository: ImageRepository) : ViewModel() {
     private val _response = MutableLiveData<List<ImageItem>>()
-    val responseImages: LiveData<List<ImageItem>> get() = _response
+    val responseImages: LiveData<List<ImageItem>> = _response
 
     init {
         getAllImages()
     }
 
     private fun getAllImages() = viewModelScope.launch {
-        repository.getAllImages().let { response ->
+        try {
+            val response = repository.getAllImages()
             if (response.isSuccessful) {
                 _response.postValue(response.body())
             } else {
-                println("Error ${response.errorBody()}")
+                Log.e(TAG, "Error: ${'$'}{response.errorBody()}")
             }
+        } catch (e: Exception) {
+            Log.e(TAG, "Exception: ${'$'}{e.localizedMessage}")
         }
+    }
+
+    companion object {
+        private const val TAG = "ImageViewModel"
     }
 }
