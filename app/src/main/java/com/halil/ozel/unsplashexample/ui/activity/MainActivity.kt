@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.halil.ozel.unsplashexample.databinding.ActivityMainBinding
 import com.halil.ozel.unsplashexample.ui.adapter.ImageAdapter
 import com.halil.ozel.unsplashexample.ui.viewmodel.ImageViewModel
@@ -13,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val imageAdapter = ImageAdapter()
+    private lateinit var layoutManager: LinearLayoutManager
     private val viewModel: ImageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +28,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.recyclerView.apply {
             adapter = imageAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(this@MainActivity).also {
+                this@MainActivity.layoutManager = it
+            }
             setHasFixedSize(true)
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    if (dy > 0) {
+                        val visibleItemCount = layoutManager.childCount
+                        val totalItemCount = layoutManager.itemCount
+                        val pastVisibleItems = layoutManager.findFirstVisibleItemPosition()
+                        if (visibleItemCount + pastVisibleItems >= totalItemCount) {
+                            viewModel.loadNextPage()
+                        }
+                    }
+                }
+            })
         }
     }
 
