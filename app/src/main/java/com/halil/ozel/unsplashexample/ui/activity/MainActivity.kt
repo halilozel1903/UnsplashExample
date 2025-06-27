@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val imageAdapter = ImageAdapter()
-    private lateinit var layoutManager: LinearLayoutManager
+    private lateinit var linearLayoutManager: LinearLayoutManager
     private val viewModel: ImageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,16 +29,16 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.apply {
             adapter = imageAdapter
             layoutManager = LinearLayoutManager(this@MainActivity).also {
-                this@MainActivity.layoutManager = it
+                this@MainActivity.linearLayoutManager = it
             }
             setHasFixedSize(true)
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
                     if (dy > 0) {
-                        val visibleItemCount = layoutManager.childCount
-                        val totalItemCount = layoutManager.itemCount
-                        val pastVisibleItems = layoutManager.findFirstVisibleItemPosition()
+                        val visibleItemCount = this@MainActivity.linearLayoutManager.childCount
+                        val totalItemCount = this@MainActivity.linearLayoutManager.itemCount
+                        val pastVisibleItems = this@MainActivity.linearLayoutManager.findFirstVisibleItemPosition()
                         if (visibleItemCount + pastVisibleItems >= totalItemCount) {
                             viewModel.loadNextPage()
                         }
