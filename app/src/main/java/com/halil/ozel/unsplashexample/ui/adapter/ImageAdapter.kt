@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.halil.ozel.unsplashexample.R
 import com.halil.ozel.unsplashexample.databinding.ImageItemBinding
 import com.halil.ozel.unsplashexample.model.ImageItem
 
@@ -30,6 +31,7 @@ class ImageAdapter : ListAdapter<ImageItem, ImageAdapter.ImageViewHolder>(DIFF_C
         holder.binding.apply {
             val imageLink = currImage.urls.full
             imageView.load(imageLink) {
+                placeholder(R.drawable.placeholder)
                 crossfade(true)
                 crossfade(DURATION_MILLIS)
             }
