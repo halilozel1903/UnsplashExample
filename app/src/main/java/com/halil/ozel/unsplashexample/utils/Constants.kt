@@ -7,4 +7,5 @@ object Constants {
     const val VERSION = "v1"
     const val ACCEPT_VERSION = "Accept-Version"
     const val AUTHORIZATION = "Authorization: Client-ID"
+    const val PER_PAGE = 20
 }

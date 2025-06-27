@@ -4,5 +4,5 @@ import com.halil.ozel.unsplashexample.api.ImageService
 import javax.inject.Inject
 
 class ImageRepository @Inject constructor(private val api: ImageService) {
-    suspend fun getAllImages() = api.getAllImages()
+    suspend fun getImages(page: Int) = api.getImages(page)
 }

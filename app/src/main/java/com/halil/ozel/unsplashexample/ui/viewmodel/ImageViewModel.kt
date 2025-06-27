@@ -16,15 +16,22 @@ class ImageViewModel @Inject constructor(private val repository: ImageRepository
     private val _response = MutableLiveData<List<ImageItem>>()
     val responseImages: LiveData<List<ImageItem>> = _response
 
+    private val imageList = mutableListOf<ImageItem>()
+    private var currentPage = 1
+
     init {
-        getAllImages()
+        loadNextPage()
     }
 
-    private fun getAllImages() = viewModelScope.launch {
+    fun loadNextPage() = viewModelScope.launch {
         try {
-            val response = repository.getAllImages()
+            val response = repository.getImages(currentPage)
             if (response.isSuccessful) {
-                _response.postValue(response.body())
+                response.body()?.let { items ->
+                    imageList.addAll(items)
+                    _response.postValue(imageList.toList())
+                    currentPage++
+                }
             } else {
                 Log.e(TAG, "Error: ${'$'}{response.errorBody()}")
             }
