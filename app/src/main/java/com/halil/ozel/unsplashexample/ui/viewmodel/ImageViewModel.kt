@@ -69,6 +69,16 @@ class ImageViewModel @Inject constructor(private val repository: ImageRepository
         }
     }
 
+    fun refresh() = viewModelScope.launch {
+        // Reset paging state and cached items then load first page
+        if (isRequestInFlight) return@launch
+        imageList.clear()
+        currentPage = 1
+        hasReachedEnd = false
+        _response.postValue(imageList.toList())
+        loadNextPage()
+    }
+
     companion object {
         private const val TAG = "ImageViewModel"
     }

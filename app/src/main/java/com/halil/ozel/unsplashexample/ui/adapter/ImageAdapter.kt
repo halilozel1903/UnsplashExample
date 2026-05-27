@@ -10,7 +10,7 @@ import com.halil.ozel.unsplashexample.R
 import com.halil.ozel.unsplashexample.databinding.ImageItemBinding
 import com.halil.ozel.unsplashexample.model.ImageItem
 
-class ImageAdapter : ListAdapter<ImageItem, ImageAdapter.ImageViewHolder>(DIFF_CALLBACK) {
+class ImageAdapter(private val onItemClick: (ImageItem) -> Unit = {}) : ListAdapter<ImageItem, ImageAdapter.ImageViewHolder>(DIFF_CALLBACK) {
 
     class ImageViewHolder(val binding: ImageItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -40,6 +40,7 @@ class ImageAdapter : ListAdapter<ImageItem, ImageAdapter.ImageViewHolder>(DIFF_C
             imageView.contentDescription = currImage.description
                 .takeIf { it.isNotBlank() }
                 ?: root.context.getString(R.string.image_content_description)
+            root.setOnClickListener { onItemClick(currImage) }
         }
     }
 
