@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Unsplash Example</string>
+    <string name="home_subtitle">Unsplash’tan seçilmiş kareleri keşfedin.</string>
+    <string name="loading_images">Görseller hazırlanıyor…</string>
+    <string name="empty_state_title">Henüz içerik yok</string>
+    <string name="empty_state_message">Şu anda gösterilecek görsel bulunamadı.</string>
+    <string name="retry">Tekrar Dene</string>
+    <string name="pagination_error">Yeni görseller yüklenemedi. Biraz sonra tekrar deneyin.</string>
+    <string name="image_content_description">Unsplash görseli</string>
 </resources>

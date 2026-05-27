@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="UnsplashExample">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-10-12T18:00:09.486163Z">
+        <DropdownSelection timestamp="2025-06-27T21:11:06.082389Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=/Users/halilozel1903/.android/avd/Pixel_7_Pro_API_TiramisuPrivacySandbox.avd" />

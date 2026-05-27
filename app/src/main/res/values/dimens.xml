@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="section_spacing">12dp</dimen>
+    <dimen name="card_corner_radius">24dp</dimen>
+    <dimen name="grid_spacing">12dp</dimen>
+    <dimen name="list_bottom_padding">24dp</dimen>
+    <dimen name="empty_state_padding">24dp</dimen>
+    <dimen name="image_item_height">260dp</dimen>
     <dimen name="activity_padding">8dp</dimen>
     <dimen name="activity_height_width_zero">0dp</dimen>
     <dimen name="card_view_elevation">10dp</dimen>
     <dimen name="activity_margin">20dp</dimen>
-    <dimen name="image_item_height">200dp</dimen>
 </resources>
