@@ -18,9 +18,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofitInstance(BASE_URL: String): ImageService =
+    fun provideRetrofitInstance(baseUrl: String): ImageService =
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ImageService::class.java)
