@@ -29,12 +29,17 @@ class ImageAdapter : ListAdapter<ImageItem, ImageAdapter.ImageViewHolder>(DIFF_C
         val currImage = getItem(position)
 
         holder.binding.apply {
-            val imageLink = currImage.urls.full
+            val imageLink = currImage.urls.regular.takeIf { it.isNotBlank() }
+                ?: currImage.urls.small.takeIf { it.isNotBlank() }
             imageView.load(imageLink) {
                 placeholder(R.drawable.placeholder)
+                error(R.drawable.placeholder)
+                fallback(R.drawable.placeholder)
                 crossfade(true)
-                crossfade(DURATION_MILLIS)
             }
+            imageView.contentDescription = currImage.description
+                .takeIf { it.isNotBlank() }
+                ?: root.context.getString(R.string.image_content_description)
         }
     }
 
@@ -46,7 +51,5 @@ class ImageAdapter : ListAdapter<ImageItem, ImageAdapter.ImageViewHolder>(DIFF_C
             override fun areContentsTheSame(oldItem: ImageItem, newItem: ImageItem) =
                 oldItem == newItem
         }
-
-        private const val DURATION_MILLIS = 1000
     }
 }
